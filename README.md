@@ -24,8 +24,10 @@ After this, I will learn **High-Level Shader Language** and **OpenGL**
 ## A. 🙈 DISSOLVE EFFECT
 **Core Idea:** Manipulate Alpha Clip Threshold over time to cut out part of a texture
 
-**1.** Turn rendering mode from `obaque` to `transparent`
-**2.** Tint a `noise texture` to alpha channel of a `main texture`
+
+**1.** Tint a `noise texture` to alpha channel of a `main texture`
+**2.** Turn rendering mode from `obaque` to `transparent`
+
 ![NoiseImage.PNG](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/DIssolve_NoiseMap.png)
 
 
@@ -47,9 +49,15 @@ After this, I will learn **High-Level Shader Language** and **OpenGL**
 #### FINAL RESULT
 
 **Before:**
+
+
+
 ![Before.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Dissolve_Before.gif)
 
 **After:**
+
+
+
 ![After.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Dissolve_After.gif)
 
 
@@ -95,10 +103,15 @@ subtract `Screen Position` from `Screen Depth` to calculate depth then saturate 
 ![DEPTH.PNG](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Water_ColorDepth.png)
 
 **2. Water surface:** Use `moving UVs` map with `Gradient Noise` and use `Normal From Height` to create normal, then map to the main texture
+
+
+
 ![NORMAL.PNG](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Wave_refraction.gif)
 
 **3. Wave movemnt:** Use `Split` to isolate only x component of vertices' positions, then moving by `Sine` wave over time 
-![Wave.PNG](https://github.com/tqgiabao2006/Shader_VFX_Collection/main/main/Readme/Water_Wave.gif)
+
+
+![Wave.PNG](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Water_Wave.gif)
 
 **4. Foam effect:** Use the same subgraph to calculate depth between the surface and the nearby object, then if the depth is larger than some threshold, detect its as a collision
 between water surface and objects, then create foam nearby
@@ -114,9 +127,10 @@ between water surface and objects, then create foam nearby
 
 
 
-
-
 **After:**
+
+
+
 ![After.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Water_After.gif)
 
 
@@ -130,6 +144,8 @@ between water surface and objects, then create foam nearby
 
 
 **2.** Use 'Time' to move 'Voronoi' node then connect it to 'Blend' to blend a 'UVs' of main textrue to moving 'Vornoi' noise create a moving pixel effect
+
+
 ![Voronoi](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Voronoi.gif)
 
 
@@ -143,9 +159,9 @@ between water surface and objects, then create foam nearby
 
 
 
-
-
 **After:**
+
+
 ![After.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Pixel_After.gif)
 
 
@@ -168,12 +184,17 @@ between water surface and objects, then create foam nearby
 ---
 #### FINAL RESULT
 
-**Before**
+**Before:**
+
+
 ![Before.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Gold_Before.gif)
 
 
-**After**
+**After:**
+
+
 ![After.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Gold_After%201.gif)
+
 
 ![After.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Gold_After_2.gif)
 
