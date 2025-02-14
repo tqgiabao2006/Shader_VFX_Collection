@@ -90,71 +90,33 @@ between water surface and objects, then create foam nearby
 
 ![ROTATE.GIF]()
 
-
-
-
-
-**✨ How It Works**
-A* combines:
-- **G(n)** → The actual cost from the start node to the current node.
-- **H(n)** → The estimated cost (heuristic) from the current node to the goal.
-- **F(n) = G(n) + H(n)** → The total estimated cost of the path.
-
-The algorithm **prioritizes nodes with the lowest `F(n)`**, ensuring an optimal and efficient path.  
-
-**🕹 Application in Blood Vein**  
-In **Mining**, A* is used for **vehicle movement and network optimization**, allowing mining cars to navigate efficiently.
-
-**📌 Why A***  
-✔ **Optimal & Efficient** – Finds the shortest path with minimal cost.  
-✔ **Heuristic-Based** – Can be tuned for different movement styles.  
-✔ **Scalable** – Works for both simple grids and complex road networks.  
-✔ **Realistic and Random** – Can be modified with random variations to create more realistic behavior.  
-
 ---
 
-#### **3. ⚙️ Procedural Mesh Generation**
-- **Road Mesh:**
-  - Pre-calculates four standard shape types with different angles: 180° (continuous road), 135°, 90° (corner road), and 45°.
-  - Uses an enum **Direction**, assigned with bitwise integers to merge directions. Iterates through a node's neighbor list and calculates the direction between them.
-  - Determines the number of standard shapes required, then rotates them accordingly.
+#### D. 🖼️ PIXELATION EFFECTS
+## Core steps:
 
-![Bitwise Direction](https://github.com/tqgiabao2006/Blood-vein/raw/main/ReadMe/Enum%20Direction.png)
+**1. Multiples `UVs` with some constant resolution rate, then `Floor` it and divides with the resolution rate to get a pixel rendering effect**
+![Pixelation]()
 
-![Get Baked Directions](https://github.com/tqgiabao2006/Blood-vein/raw/main/ReadMe/Get%20direction.png)
+**2. Use 'Time' to move 'Voronoi' node then connect it to 'Blend' to blend a 'UVs' of main textrue to moving 'Vornoi' noise create a moving pixel effect
+![Voronoi]()
 
-  - Finally, uses polar coordinates to create smooth curves at sharp angles.
+## FINAL RESULT
 
-![Curve Mesh](https://github.com/tqgiabao2006/Blood-vein/raw/main/ReadMe/Smooth%20curve.png)
 
-- **Parking Lot Mesh:**
-  - Creates a rounded rectangle based on the building's size and direction.
 
----
+#### E. 🥇 TYLIZED GOLD EFFECT
+## Core effects:
 
-#### **4. 🔀 Multi-threading with ECS**
-- **Why Use It?**
-  - **Performance**: Needed to handle large amounts of AI-driven entities (mining cars, roads) efficiently.
-  - **Scalability**: Ensures smooth performance as complexity grows.
-  - **Multithreading**: Avoids performance bottlenecks in pathfinding and vehicle movement.
+**1. Apply Normal Map **
+![Normal]()
 
-- **How It Was Applied:**
-  - **ECS (Entity Component System)**: Decouples game data (position, speed, etc.) from logic, improving memory usage and CPU performance.
-  - **Multithreading**: Distributes intensive tasks across multiple CPU cores, maintaining **1000+ FPS** even with **1000 cars**.
-  - **Burst Compiler**: Optimizes performance-critical code, improving runtime execution efficiency.
+**2. Spectacular: Use `View Direction` with `Dot Product` to calculate the pixels are directly lighted, then tint it with spectacular `Color` **
 
-### **Drawbacks**
-- **Complexity**: DOTS requires a new approach to game architecture, increasing development difficulty.
-- **Debugging Challenges**: Multithreading introduces race conditions and synchronization issues.
-- **Imperfect for Uncertain Data**: User-defined data types that change unpredictably can cause issues in road calculations and building placement.
+![Pixelation]()
 
-![ECS](https://github.com/tqgiabao2006/Blood-vein/raw/main/ReadMe/ECS.png)
 
----
-## 🎥 Demo Gameplay Video
-![Gameplay Preview](https://github.com/tqgiabao2006/Blood-vein/raw/main/ReadMe/Gameplay.gif)
 
----
 
 ## 🛠 Tech Stack  
 | **Technology**   | **Usage**  |  
