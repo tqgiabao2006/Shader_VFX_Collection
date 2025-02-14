@@ -7,7 +7,7 @@
 
 ---
 
-## 🚀 Overview  
+### 🚀 Overview  
 *SHADER_VFX_COLLECTION* is a collection of all visual effect that I have learned. It plays a key role to learn about rendering process, and foster my interst in graphic programming
 After this, I will learn **High-Level Shader Language** and **OpenGL**
 
@@ -22,7 +22,7 @@ After this, I will learn **High-Level Shader Language** and **OpenGL**
 ### 📌 Details
 
 #### A. 🙈 DISSOLVE EFFECT
-## Core Idea: Manipulate Alpha Clip Threshold over time to cut out part of a texture
+**Core Idea:** Manipulate Alpha Clip Threshold over time to cut out part of a texture
 
 **1.** Turn rendering mode from `obaque` to `transparent`
 
@@ -56,7 +56,7 @@ After this, I will learn **High-Level Shader Language** and **OpenGL**
 ---
 
 #### B. ⛩️ Portal Effect
-## Core Idea: Use Polar Coordinate to twist a seamless noise texture into a circle, then rotate over time with multiples layers
+**Core Idea:** Use Polar Coordinate to twist a seamless noise texture into a circle, then rotate over time with multiples layers
 
 **1**. Use `Polar Coordinate` to twist noise texture
 ![PolarCoordinate.PNG]()
@@ -79,7 +79,7 @@ After this, I will learn **High-Level Shader Language** and **OpenGL**
 ---
 
 #### C. 🌊 WAVE EFFECT
-## Core effects:
+**Core effects:**
 
 **1. Tint color by depth:** `Screen Depth` return distance between camera and water surface pixel, `Screen Position` return distance between camera pixel inside surface, 
 subtract `Screen Position` from `Screen Depth` to calculate depth then saturate to blend color from dark to light based on depth
@@ -112,7 +112,7 @@ between water surface and objects, then create foam nearby
 ---
 
 #### D. 🖼️ PIXELATION EFFECTS
-## Core steps:
+**Core steps:**
 
 **1.** Multiples `UVs` with some constant resolution rate, then `Floor` it and divides with the resolution rate to get a pixel rendering effect
 ![Pixelation]()
@@ -132,7 +132,7 @@ between water surface and objects, then create foam nearby
 ---
 
 #### E. 🥇 TYLIZED GOLD EFFECT
-## Core effects:
+**Core effects**
 
 **1.** Apply Normal Map
 ![Normal]()
