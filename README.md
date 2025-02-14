@@ -38,7 +38,9 @@ After this, I will learn **High-Level Shader Language** and **OpenGL**
 ![VFXGraph.PNG](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Dissolve_VFX.png)
 
 
-**Optional:** Spawn animted butterfly after a model fully disappears
+**Optional:** Spawn animted butterfly after a model fully disappears <br>
+
+
 ![Butterfly.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/DIssolve_Butterfly.gif)
 
 ---
