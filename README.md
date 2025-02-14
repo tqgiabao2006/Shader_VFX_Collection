@@ -44,10 +44,10 @@ After this, I will learn **High-Level Shader Language** and **OpenGL**
 ---
 #### FINAL RESULT
 
-**Before**
+**Before:**
 ![Before.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Dissolve_Before.gif)
 
-**After**
+**After:**
 ![After.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Dissolve_After.gif)
 
 
@@ -57,19 +57,28 @@ After this, I will learn **High-Level Shader Language** and **OpenGL**
 **Core Idea:** Use Polar Coordinate to twist a seamless noise texture into a circle, then rotate over time with multiples layers
 
 **1**. Use `Polar Coordinate` to twist noise texture
-**2**. Rotate over time
+**2**. Rotate over time <br>
+
 ![ROTATE.GIFT](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Portal_Porlar%20%2B%20Rotate.gif)
 
-**3.** Use mutliple layers with differnt color
-![Layers.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/main/main/Readme/Portal_Layers.gif)
+**3.** Use mutliple layers with differnt color <br>
+
+
+![Layers.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Portal_Layers.gif)
 
 ---
 #### FINAL RESULT
 
-**Before**
+**Before:** <br>
+
 ![Before.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Portal_Before.gif)
 
-**After**
+
+
+
+**After:** <br>
+
+
 ![After.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Portal_After.gif)
 
 
