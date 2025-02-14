@@ -1,44 +1,98 @@
-# 🎮 Mining - *A Mining City Builder*
+# ✨ SHADER_VFX_COLLECTION ✨
 
-![Blood Vein Logo](https://github.com/tqgiabao2006/Blood-vein/blob/main/ReadMe/MiningLogo.png?raw=true)
+![ShaderLogo.PNG]()
 
 [![Unity](https://img.shields.io/badge/Made_with-Unity-000?logo=unity&style=for-the-badge)](https://unity.com/)  
-[![GitHub Repo](https://img.shields.io/badge/View_on-GitHub-blue?style=for-the-badge&logo=github)](https://github.com/tqgiabao2006/Blood-vein)
+[![GitHub Repo](https://img.shields.io/badge/View_on-GitHub-blue?style=for-the-badge&logo=github)]()
 
 ---
 
-## 🚀 Game Overview  
-*Mining* is a **resource management simulation** where you design a **vascular network** to efficiently distribute mining cars underwater. With **Game AI, multi-threading, and procedural generation**, experience the challenge of optimizing pathways using **A* pathfinding and ECS-based logic**.
+## 🚀 Overview  
+*SHADER_VFX_COLLECTION* is a collection of all visual effect that I have learned. It plays a key role to learn about rendering process, and foster my interst in graphic programming
+After this, I will learn **High-Level Shader Language** and **OpenGL**
 
-### 🎯 Key Features
-- 🏗 **Road System** – Design organic road networks like blood veins.  
-- 🤖 **AI-driven Pathfinding** – Uses the **A* algorithm** for vehicle navigation.  
-- ⚙️ **Procedural Mesh Generation** – Dynamic road structures adapt to player design.  
-- 🔀 **Multi-threading with ECS** – Performance-optimized simulation.  
+### 🎯 Key Effects
+- 🙈 **Dissolve Effect** – Characters are disappeared by time with burning effect. 
+- ⛩️ **Portal Effect** – A spining light in the center of a portal. 
+- 🌊 **Wave Effect** – A wave rises and falls naturally, with foam effect around object intersecting with its surface
+- 🖼️ **Pixelation Effect** – Turning a normal image to pixel image, moving the pixel assets like it is affected by winds
+- 🥇 **Stylized Gold Effect** - Color tinted, with normal map, and stylized occlusion making a object has gold reflection, and gold-like surface
 ---
 
 ### 📌 Details
 
-#### **1. 🏗 Road Systems**
-- **Grid Class:**
-  - This class is given a Vector2 of a **map size** to calculate with a constant **node size**.
-  - Main features: Stores data of all current **Nodes** and returns a **Node** based on the given Vector2 position.
-- **Node Class:**
-  - Main properties: `Vector2 Grid Position`, `bool IsWalkable`, `float Penalty` (for penalty lanes), `List<Node> Neighbors`.
-  - Stored in a **Heap** data structure to optimize the pathfinding algorithm.
+#### A. 🙈 DISSOLVE EFFECT
+## Core Idea: Manipulate Alpha Clip Threshold over time to cut out part of a texture
 
-![Grid Image](https://github.com/tqgiabao2006/Blood-vein/raw/main/ReadMe/BloodVein_Grid.png)
+**1. Turn rendering mode from `obaque` to `transparent`**
+**2. Tint a `noise texture` to alpha channel of a `main texture`**
+![NoiseImage.PNG]()
 
-*Grid image, with red color indicating an unwalkable node.*
 
-![Heap Image](https://github.com/tqgiabao2006/Blood-vein/raw/main/ReadMe/Heap.png)
+**3. Enable `Alpha Clip Threshold` that will cut out the pixel which has alpha value under it**
+**4. Increase `Alpha Clip Threshold` by time**
+![AlphaCLipThreshold.GIF]()
 
-*Heap interface to optimize the pathfinding algorithm.*
- 
+**5. Add `Edge Thickness` and `Edge Color` with emssion to tint color for part that will be cut**
+![EdgeColor.PNG]()
+
+**OPTIONAL: Create VFX Graph then synchronize with Shader Graph to track the area close to the disappeared area to create fire embles**
+![VFXGraph.PNG]()
+
+
+**OPTIONAL: Spawn animted butterfly after a model fully disappears**
+![Butterfly.GIF]()
+
+## FINAL RESULT
+![RESULT.GIF]()
+
 ---
 
-#### **2. 🤖 A* Pathfinding Algorithm**
-A* (A-Star) is a widely used **graph traversal and pathfinding algorithm** that finds the **shortest path** from a starting point to a target.
+#### B. ⛩️ Portal Effect
+## Core Idea: Use Polar Coordinate to twist a seamless noise texture into a circle, then rotate over time with multiples layers
+
+**1. Use `Polar Coordinate` to twist noise texture**
+![PolarCoordinate.PNG]()
+
+**2. Rotate over time**
+![ROTATE.GIFT]()
+
+**3. Use mutliple layers with differnt color**
+![Layers.GIF]()
+
+## FINAL RESULT
+![RESULT.GIF]()
+
+---
+
+#### C. 🌊 WAVE EFFECT
+## Core effects:
+
+**1. Tint color by depth:** `Screen Depth` return distance between camera and water surface pixel, `Screen Position` return distance between camera pixel inside surface, 
+subtract `Screen Position` from `Screen Depth` to calculate depth then saturate to blend color from dark to light based on depth
+![DEPTH.PNG]()
+
+**2. Water surface:** Use `moving UVs` map with `Gradient Noise` and use `Normal From Height` to create normal, then map to the main texture
+![NORMAL.PNG]()
+
+**3. Wave movemnt:** Use `Split` to isolate only x component of vertices' positions, then moving by `Sine` wave over time 
+![Wave.PNG]()
+
+**4. Foam effect:** Use the same subgraph to calculate depth between the surface and the nearby object, then if the depth is larger than some threshold, detect its as a collision
+between water surface and objects, then create foam nearby
+![Foam.PNG]()
+
+## FINAL RESULT
+
+![WATER SURFACE.GIF]()
+
+![ROCK.GIF]()
+
+![ROTATE.GIF]()
+
+
+
+
 
 **✨ How It Works**
 A* combines:
