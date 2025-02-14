@@ -21,7 +21,7 @@ After this, I will learn **High-Level Shader Language** and **OpenGL**
 
 ### 📌 Details
 
-#### A. 🙈 DISSOLVE EFFECT
+## A. 🙈 DISSOLVE EFFECT
 **Core Idea:** Manipulate Alpha Clip Threshold over time to cut out part of a texture
 
 **1.** Turn rendering mode from `obaque` to `transparent`
