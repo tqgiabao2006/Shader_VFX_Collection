@@ -114,6 +114,59 @@ After this, I will learn **High-Level Shader Language** and **OpenGL**.
 
 ---
 
+## D. 🎮 PIXELATION EFFECTS
+
+**Core steps:**  
+
+**1.** Multiply `UVs` with a constant resolution rate, then `Floor` it and divide by the resolution rate to achieve a pixelated rendering effect.  
+![Pixelation](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Pixelation.png)  
+
+**2.** Use `Time` to move the `Voronoi` node, then connect it to `Blend` to blend the `UVs` of the main texture with the moving `Voronoi` noise, creating a dynamic pixel effect.  
+![Voronoi](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Voronoi.gif)  
+
+---  
+#### FINAL RESULT  
+
+**Before:**  
+
+![Before.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Pixel_Before.gif)  
+
+**After:**  
+
+![After.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Pixel_After.gif)  
+
+---  
+
+## E. 🏆 STYLIZED GOLD EFFECT  
+
+**Core effects:**  
+
+**1.** Apply a Normal Map.  
+![Normal](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Normal.png)  
+
+**2.** Specular Effect: Use `View Direction` with `Dot Product` to determine the pixels that receive direct lighting, then tint them with a specular `Color`.  
+![Spectacular.PNG](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Spectacular.png)  
+
+**3.** Rim Effect: Use the `Fresnel Effect`, then tint with a rim `Color` to create a soft glow on the brightest parts.  
+![Trim.PNG](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Rim%20Effect.png)  
+
+**Optional:** Implement Toon Shading for a more stylized look.  
+
+---  
+#### FINAL RESULT  
+
+**Before:**  
+
+![Before.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Gold_Before.gif)  
+
+**After:**  
+
+![After.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Gold_After%201.gif)  
+![After.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Gold_After_2.gif)  
+
+---
+
+
 ## 🎮 Current Status  
 📦 **Developing**
 
