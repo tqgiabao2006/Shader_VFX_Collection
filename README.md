@@ -38,7 +38,7 @@ After this, I will learn **High-Level Shader Language** and **OpenGL**
 ![VFXGraph.PNG](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Dissolve_VFX.png)
 
 
-**Optional:** Spawn animted butterfly after a model fully disappears <br>
+**Optional:** Spawn animted butterfly after a model fully disappears 
 
 
 ![Butterfly.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/DIssolve_Butterfly.gif)
@@ -59,11 +59,12 @@ After this, I will learn **High-Level Shader Language** and **OpenGL**
 **Core Idea:** Use Polar Coordinate to twist a seamless noise texture into a circle, then rotate over time with multiples layers
 
 **1**. Use `Polar Coordinate` to twist noise texture
-**2**. Rotate over time <br>
+**2**. Rotate over time
+
 
 ![ROTATE.GIFT](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Portal_Porlar%20%2B%20Rotate.gif)
 
-**3.** Use mutliple layers with differnt color <br>
+**3.** Use mutliple layers with differnt color 
 
 
 ![Layers.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Portal_Layers.gif)
@@ -71,14 +72,14 @@ After this, I will learn **High-Level Shader Language** and **OpenGL**
 ---
 #### FINAL RESULT
 
-**Before:** <br>
+**Before:** 
 
 ![Before.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Portal_Before.gif)
 
 
 
 
-**After:** <br>
+**After:** 
 
 
 ![After.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Portal_After.gif)
@@ -106,10 +107,16 @@ between water surface and objects, then create foam nearby
 ---
 ##### FINAL RESULT
 
-**Before**
+**Before:**
+
+
 ![Before.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Water_Before.gif)
 
-**After**
+
+
+
+
+**After:**
 ![After.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Water_After.gif)
 
 
@@ -121,16 +128,24 @@ between water surface and objects, then create foam nearby
 **1.** Multiples `UVs` with some constant resolution rate, then `Floor` it and divides with the resolution rate to get a pixel rendering effect
 ![Pixelation](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Pixelation.png)
 
+
 **2.** Use 'Time' to move 'Voronoi' node then connect it to 'Blend' to blend a 'UVs' of main textrue to moving 'Vornoi' noise create a moving pixel effect
 ![Voronoi](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Voronoi.gif)
+
 
 ---
 #### FINAL RESULT
 
-**Before**
+**Before:**
+
+
 ![Before.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Pixel_Before.gif)
 
-**After**
+
+
+
+
+**After:**
 ![After.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Pixel_After.gif)
 
 
