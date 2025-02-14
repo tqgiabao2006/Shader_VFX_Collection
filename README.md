@@ -166,7 +166,7 @@ between water surface and objects, then create foam nearby
 ## 🏆 Contributors & Credits  
 👨‍💻 **Ben** (*Mad Scientist of Game Lab*) – Solo Developer  
 🎵 **Music & SFX:** Open-source / Custom Compositions  
-📖 **Special Thanks:** [Unity Vietnam Community], Senior Game Artist Tung Anh as an advisor
+📖 **Special Thanks:** [Unity Vietnam Community], Senior Game Artist Tung Anh as an advisor <br>
 🔥 **Inspired by:** Daniel Ilett, MinionsArt,Acerola
 
 
