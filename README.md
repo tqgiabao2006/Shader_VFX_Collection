@@ -44,7 +44,13 @@ After this, I will learn **High-Level Shader Language** and **OpenGL**
 **Optional:** Spawn animted butterfly after a model fully disappears
 ![Butterfly.GIF]()
 
+---
 ## FINAL RESULT
+
+**Before**
+
+**After**
+
 ![RESULT.GIF]()
 
 ---
@@ -61,11 +67,12 @@ After this, I will learn **High-Level Shader Language** and **OpenGL**
 **3.** Use mutliple layers with differnt color
 ![Layers.GIF]()
 
+---
 ## FINAL RESULT
 
-## BEFORE
+**Before**
 
-## AFTER:
+**After**
 
 ![RESULT.GIF]()
 
@@ -88,12 +95,14 @@ subtract `Screen Position` from `Screen Depth` to calculate depth then saturate 
 between water surface and objects, then create foam nearby
 ![Foam.PNG]()
 
+---
 ## FINAL RESULT
 
-## BEFORE
+**Before**
 
-## AFTER:
+**After**
 
+![RESULT.GIF]()
 ![WATER SURFACE.GIF]()
 
 ![ROCK.GIF]()
@@ -111,13 +120,16 @@ between water surface and objects, then create foam nearby
 **2.** Use 'Time' to move 'Voronoi' node then connect it to 'Blend' to blend a 'UVs' of main textrue to moving 'Vornoi' noise create a moving pixel effect
 ![Voronoi]()
 
+---
 ## FINAL RESULT
 
-## BEFORE
+**Before**
 
-## AFTER:
-![PixelationEffect.GIF]()
+**After**
 
+![RESULT.GIF]()
+
+---
 
 #### E. 🥇 TYLIZED GOLD EFFECT
 ## Core effects:
@@ -132,13 +144,17 @@ between water surface and objects, then create foam nearby
 
 **Optional:** Toon Shading
 
+---
 ## FINAL RESULT
 
-## BEFORE
+**Before**
 
-## AFTER:
+**After**
+
+![RESULT.GIF]()
 
 
+---
 
 ## 🎮 Current Status  
 📦 **Developing**
