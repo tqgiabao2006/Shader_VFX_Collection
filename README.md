@@ -45,7 +45,7 @@ After this, I will learn **High-Level Shader Language** and **OpenGL**
 ![Butterfly.GIF]()
 
 ---
-## FINAL RESULT
+#### FINAL RESULT
 
 **Before**
 
@@ -55,7 +55,7 @@ After this, I will learn **High-Level Shader Language** and **OpenGL**
 
 ---
 
-#### B. ⛩️ Portal Effect
+## B. ⛩️ Portal Effect
 **Core Idea:** Use Polar Coordinate to twist a seamless noise texture into a circle, then rotate over time with multiples layers
 
 **1**. Use `Polar Coordinate` to twist noise texture
@@ -68,7 +68,7 @@ After this, I will learn **High-Level Shader Language** and **OpenGL**
 ![Layers.GIF]()
 
 ---
-## FINAL RESULT
+#### FINAL RESULT
 
 **Before**
 
@@ -78,7 +78,7 @@ After this, I will learn **High-Level Shader Language** and **OpenGL**
 
 ---
 
-#### C. 🌊 WAVE EFFECT
+## C. 🌊 WAVE EFFECT
 **Core effects:**
 
 **1. Tint color by depth:** `Screen Depth` return distance between camera and water surface pixel, `Screen Position` return distance between camera pixel inside surface, 
@@ -96,7 +96,7 @@ between water surface and objects, then create foam nearby
 ![Foam.PNG]()
 
 ---
-## FINAL RESULT
+##### FINAL RESULT
 
 **Before**
 
@@ -111,7 +111,7 @@ between water surface and objects, then create foam nearby
 
 ---
 
-#### D. 🖼️ PIXELATION EFFECTS
+## D. 🖼️ PIXELATION EFFECTS
 **Core steps:**
 
 **1.** Multiples `UVs` with some constant resolution rate, then `Floor` it and divides with the resolution rate to get a pixel rendering effect
@@ -121,7 +121,7 @@ between water surface and objects, then create foam nearby
 ![Voronoi]()
 
 ---
-## FINAL RESULT
+#### FINAL RESULT
 
 **Before**
 
@@ -131,7 +131,7 @@ between water surface and objects, then create foam nearby
 
 ---
 
-#### E. 🥇 TYLIZED GOLD EFFECT
+## E. 🥇 TYLIZED GOLD EFFECT
 **Core effects**
 
 **1.** Apply Normal Map
@@ -145,7 +145,7 @@ between water surface and objects, then create foam nearby
 **Optional:** Toon Shading
 
 ---
-## FINAL RESULT
+#### FINAL RESULT
 
 **Before**
 
