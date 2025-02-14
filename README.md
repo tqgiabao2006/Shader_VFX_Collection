@@ -8,196 +8,109 @@
 ---
 
 ### 🚀 Overview  
-*SHADER_VFX_COLLECTION* is a collection of all visual effect that I have learned. It plays a key role to learn about rendering process, and foster my interst in graphic programming
-After this, I will learn **High-Level Shader Language** and **OpenGL**
+*SHADER_VFX_COLLECTION* is a collection of all visual effects that I have learned. It plays a key role in understanding the rendering process and fosters my interest in graphic programming.  
+After this, I will learn **High-Level Shader Language** and **OpenGL**.
 
 ### 🎯 Key Effects
-- 🙈 **Dissolve Effect** – Characters are disappeared by time with burning effect. 
-- ⛩️ **Portal Effect** – A spining light in the center of a portal. 
-- 🌊 **Wave Effect** – A wave rises and falls naturally, with foam effect around object intersecting with its surface
-- 🖼️ **Pixelation Effect** – Turning a normal image to pixel image, moving the pixel assets like it is affected by winds
-- 🥇 **Stylized Gold Effect** - Color tinted, with normal map, and stylized occlusion making a object has gold reflection, and gold-like surface
+- 🙈 **Dissolve Effect** – Characters disappear over time with a burning effect.  
+- ⛩️ **Portal Effect** – A spinning light in the center of a portal.  
+- 🌊 **Wave Effect** – A wave rises and falls naturally, with a foam effect around objects intersecting with its surface.  
+- 🖼️ **Pixelation Effect** – Converts a normal image into a pixelated image, moving the pixel assets as if affected by wind.  
+- 🥇 **Stylized Gold Effect** – Color-tinted with a normal map and stylized occlusion, giving an object a gold-like reflection and surface.  
+
 ---
 
 ### 📌 Details
 
 ## A. 🙈 DISSOLVE EFFECT
-**Core Idea:** Manipulate Alpha Clip Threshold over time to cut out part of a texture
+**Core Idea:** Manipulate the Alpha Clip Threshold over time to cut out parts of a texture.
 
-
-**1.** Tint a `noise texture` to alpha channel of a `main texture`
-**2.** Turn rendering mode from `obaque` to `transparent`
+**1.** Tint a `noise texture` to the alpha channel of a `main texture`.  
+**2.** Change rendering mode from `opaque` to `transparent`.  
 
 ![NoiseImage.PNG](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/DIssolve_NoiseMap.png)
 
+**3.** Enable `Alpha Clip Threshold`, which will cut out pixels with an alpha value below it.  
+**4.** Increase `Alpha Clip Threshold` over time.  
+**5.** Add `Edge Thickness` and `Edge Color` with emission to tint the color of the disappearing parts.  
 
-**3.** Enable `Alpha Clip Threshold` that will cut out the pixel which has alpha value under it
-**4.** Increase `Alpha Clip Threshold` by time**
-**5.** Add `Edge Thickness` and `Edge Color` with emssion to tint color for part that will be cut
 ![EdgeColor.PNG](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/DIssolve_Color_Alpha.png)
 
-**Optional:** Create VFX Graph then synchronize with Shader Graph to track the area close to the disappeared area to create fire embles
+**Optional:** Create a VFX Graph and synchronize it with Shader Graph to track the disappearing area and create fire embers.  
+
 ![VFXGraph.PNG](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Dissolve_VFX.png)
 
-
-**Optional:** Spawn animted butterfly after a model fully disappears 
-
+**Optional:** Spawn an animated butterfly after a model fully disappears.  
 
 ![Butterfly.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/DIssolve_Butterfly.gif)
 
 ---
 #### FINAL RESULT
 
-**Before:**
-
-
+**Before:**  
 
 ![Before.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Dissolve_Before.gif)
 
-**After:**
-
-
+**After:**  
 
 ![After.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Dissolve_After.gif)
 
-
 ---
 
-## B. ⛩️ Portal Effect
-**Core Idea:** Use Polar Coordinate to twist a seamless noise texture into a circle, then rotate over time with multiples layers
+## B. ⛩️ PORTAL EFFECT
+**Core Idea:** Use Polar Coordinates to twist a seamless noise texture into a circle, then rotate it over time with multiple layers.
 
-**1**. Use `Polar Coordinate` to twist noise texture
-**2**. Rotate over time
-
+**1.** Use `Polar Coordinates` to twist the noise texture.  
+**2.** Rotate over time.  
 
 ![ROTATE.GIFT](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Portal_Porlar%20%2B%20Rotate.gif)
 
-**3.** Use mutliple layers with differnt color 
-
+**3.** Use multiple layers with different colors.  
 
 ![Layers.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Portal_Layers.gif)
 
 ---
 #### FINAL RESULT
 
-**Before:** 
+**Before:**  
 
 ![Before.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Portal_Before.gif)
 
-
-
-
-**After:** 
-
+**After:**  
 
 ![After.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Portal_After.gif)
-
 
 ---
 
 ## C. 🌊 WAVE EFFECT
-**Core effects:**
+**Core Effects:**
 
-**1. Tint color by depth:** `Screen Depth` return distance between camera and water surface pixel, `Screen Position` return distance between camera pixel inside surface, 
-subtract `Screen Position` from `Screen Depth` to calculate depth then saturate to blend color from dark to light based on depth
+**1. Tint color by depth:** `Screen Depth` returns the distance between the camera and the water surface pixels. `Screen Position` returns the distance between the camera and pixels inside the surface. Subtract `Screen Position` from `Screen Depth` to calculate depth, then saturate to blend colors from dark to light based on depth.  
+
 ![DEPTH.PNG](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Water_ColorDepth.png)
 
-**2. Water surface:** Use `moving UVs` map with `Gradient Noise` and use `Normal From Height` to create normal, then map to the main texture
-
-
+**2. Water surface:** Use `moving UVs` mapped with `Gradient Noise` and apply `Normal From Height` to create normal mapping.  
 
 ![NORMAL.PNG](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Wave_refraction.gif)
 
-**3. Wave movemnt:** Use `Split` to isolate only x component of vertices' positions, then moving by `Sine` wave over time 
-
+**3. Wave movement:** Isolate the x-component of vertex positions and move it with a `Sine` wave over time.  
 
 ![Wave.PNG](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Water_Wave.gif)
 
-**4. Foam effect:** Use the same subgraph to calculate depth between the surface and the nearby object, then if the depth is larger than some threshold, detect its as a collision
-between water surface and objects, then create foam nearby
+**4. Foam effect:** Detect the depth between the surface and nearby objects, then generate foam at collision points.  
+
 ![Foam.PNG](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Water_Foam.gif)
 
 ---
-##### FINAL RESULT
+#### FINAL RESULT
 
-**Before:**
-
+**Before:**  
 
 ![Before.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Water_Before.gif)
 
-
-
-**After:**
-
-
+**After:**  
 
 ![After.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Water_After.gif)
-
-
----
-
-## D. 🖼️ PIXELATION EFFECTS
-**Core steps:**
-
-**1.** Multiples `UVs` with some constant resolution rate, then `Floor` it and divides with the resolution rate to get a pixel rendering effect
-![Pixelation](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Pixelation.png)
-
-
-**2.** Use 'Time' to move 'Voronoi' node then connect it to 'Blend' to blend a 'UVs' of main textrue to moving 'Vornoi' noise create a moving pixel effect
-
-
-![Voronoi](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Voronoi.gif)
-
-
----
-#### FINAL RESULT
-
-**Before:**
-
-
-![Before.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Pixel_Before.gif)
-
-
-
-**After:**
-
-
-![After.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Pixel_After.gif)
-
-
----
-
-## E. 🥇 TYLIZED GOLD EFFECT
-**Core effects**
-
-**1.** Apply Normal Map
-![Normal](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Normal.png)
-
-**2.** Spectacular: Use `View Direction` with `Dot Product` to calculate the pixels are directly lighted, then tint it with spectacular `Color` 
-![Spectacular.PNG](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Spectacular.png)
-
-**3.** Trim effect: Use `Fresnel Effect` then tint with rim `Color` to make a soft light shine in the brightest part
-![Trim.PNG](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Rim%20Effect.png)
-
-**Optional:** Toon Shading
-
----
-#### FINAL RESULT
-
-**Before:**
-
-
-![Before.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Gold_Before.gif)
-
-
-**After:**
-
-
-![After.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Gold_After%201.gif)
-
-
-![After.GIF](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/Gold_After_2.gif)
-
 
 ---
 
@@ -206,14 +119,11 @@ between water surface and objects, then create foam nearby
 
 ---
 
-
-
 ## 🏆 Contributors & Credits  
 👨‍💻 **Ben** (*Mad Scientist of Game Lab*) – Solo Developer  
 🎵 **Music & SFX:** Open-source / Custom Compositions  
-📖 **Special Thanks:** [Unity Vietnam Community], Senior Game Artist Tung Anh as an advisor <br>
-🔥 **Inspired by:** Daniel Ilett, MinionsArt,Acerola
-
+📖 **Special Thanks:** [Unity Vietnam Community], Senior Game Artist Tung Anh as an advisor  
+🔥 **Inspired by:** Daniel Ilett, MinionsArt, Acerola  
 
 ---
 
