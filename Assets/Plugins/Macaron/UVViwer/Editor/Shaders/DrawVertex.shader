@@ -115,7 +115,7 @@ Shader "Hidden/Macaron/UVViewer/Editor/DrawVertex"
                 float4 color : COLOR;
             };
 
-            struct v2f
+            struct Interpolators
             {
                 float4 vertex : SV_POSITION;
                 float4 color : COLOR;
@@ -125,19 +125,19 @@ Shader "Hidden/Macaron/UVViewer/Editor/DrawVertex"
             float _VertexColorRatio;
             float _Radius;
 
-            v2f vert(appdata_t v)
+            Interpolators vert(appdata_t v)
             {
                 float2 offset = normalize(mul(unity_ObjectToWorld, float4(v.normal, 0)).xy);
                 float3 worldPos = mul(unity_ObjectToWorld, v.vertex);
                 worldPos.xy += offset * _Radius;
 
-                v2f o;
+                Interpolators o;
                 o.vertex = mul(UNITY_MATRIX_VP, float4(worldPos, 1));
                 o.color = lerp(float4(0, 0, 0, 1), v.color, _VertexColorRatio) * _Color;
                 return o;
             }
 
-            float4 frag(v2f i) : SV_Target
+            float4 frag(Interpolators i) : SV_Target
             {
                 return i.color;
             }

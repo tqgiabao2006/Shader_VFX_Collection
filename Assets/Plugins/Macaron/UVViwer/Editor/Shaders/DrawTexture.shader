@@ -31,7 +31,7 @@ Shader "Hidden/Macaron/UVViewer/Editor/DrawTexture"
                 float2 texcoord : TEXCOORD0;
             };
 
-            struct v2f
+            struct Interpolators
             {
                 float4 vertex : SV_POSITION;
                 fixed4 color : COLOR;
@@ -45,9 +45,9 @@ Shader "Hidden/Macaron/UVViewer/Editor/DrawTexture"
             half4 _ColorMaskA;
             half _AdditiveAlpha;
 
-            v2f vert(appdata_t v)
+            Interpolators vert(appdata_t v)
             {
-                v2f o;
+                Interpolators o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.texcoord = v.texcoord;
                 o.color = v.color;
@@ -55,7 +55,7 @@ Shader "Hidden/Macaron/UVViewer/Editor/DrawTexture"
                 return o;
             }
 
-            fixed4 frag(v2f i) : SV_Target
+            fixed4 frag(Interpolators i) : SV_Target
             {
                 half4 color = tex2D(_MainTex, i.texcoord);
                 fixed4 r = color.r * _ColorMaskR;

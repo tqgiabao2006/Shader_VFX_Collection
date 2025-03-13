@@ -26,14 +26,14 @@ Shader "WooArt/Animating Texture by Age"
 
             #include "UnityCG.cginc"
 
-            struct appdata
+            struct MeshData
             {
                 float4 vertex : POSITION;
                 fixed4 color : COLOR;
                 float3 uv : TEXCOORD0;
             };
 
-            struct v2f
+            struct Interpolators
             {
                 float3 uv : TEXCOORD0;
                 float4 vertex : SV_POSITION;
@@ -45,9 +45,9 @@ Shader "WooArt/Animating Texture by Age"
             float _Repeat;
             float _Emissive;
 
-            v2f vert (appdata v)
+            Interpolators vert (MeshData v)
             {
-                v2f o;
+                Interpolators o;
 
                 float agePercent = v.uv.z;
 
@@ -60,7 +60,7 @@ Shader "WooArt/Animating Texture by Age"
                 return o;
             }
 
-            fixed4 frag (v2f i) : SV_Target
+            fixed4 frag (Interpolators i) : SV_Target
             {
                 fixed4 col = tex2D(_MainTex, i.uv) * i.color;
             

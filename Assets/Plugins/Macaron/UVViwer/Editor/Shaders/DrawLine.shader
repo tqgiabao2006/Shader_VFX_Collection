@@ -104,21 +104,21 @@ Shader "Hidden/Macaron/UVViewer/Editor/DrawLine"
                 float4 vertex : POSITION;
             };
 
-            struct v2f
+            struct Interpolators
             {
                 float4 vertex : SV_POSITION;
             };
 
             float4 _Color;
 
-            v2f vert(appdata_t v)
+            Interpolators vert(appdata_t v)
             {
-                v2f o;
+                Interpolators o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 return o;
             }
 
-            fixed4 frag(v2f i) : SV_Target
+            fixed4 frag(Interpolators i) : SV_Target
             {
                 return _Color;
             }
