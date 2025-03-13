@@ -16,7 +16,7 @@ Shader "Hidden/Macaron/UVViewer/Editor/DrawLine"
             Cull Off
 
             CGPROGRAM
-            #pragma vertex vert
+            #pragma vertex interpolation
             #pragma geometry geo
             #pragma fragment frag
             #pragma target 4.0
@@ -35,7 +35,7 @@ Shader "Hidden/Macaron/UVViewer/Editor/DrawLine"
             float4 _Color;
             float _Thickness;
 
-            appdata_t vert(appdata_t v)
+            appdata_t interpolation(appdata_t v)
             {
                 appdata_t o;
                 o.vertex = mul(unity_ObjectToWorld, v.vertex);
@@ -94,7 +94,7 @@ Shader "Hidden/Macaron/UVViewer/Editor/DrawLine"
             ZTest Always
 
             CGPROGRAM
-            #pragma vertex vert
+            #pragma vertex interpolation
             #pragma fragment frag
             #pragma target 2.0
             #include "UnityCG.cginc"
@@ -111,7 +111,7 @@ Shader "Hidden/Macaron/UVViewer/Editor/DrawLine"
 
             float4 _Color;
 
-            Interpolators vert(appdata_t v)
+            Interpolators interpolation(appdata_t v)
             {
                 Interpolators o;
                 o.vertex = UnityObjectToClipPos(v.vertex);

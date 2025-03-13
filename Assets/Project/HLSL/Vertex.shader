@@ -25,7 +25,7 @@ Shader "Unlit/Vertex"
             
             //Blend DstColor Zero 
             CGPROGRAM
-            #pragma vertex vert
+            #pragma vertex interpolation
             #pragma fragment frag
 
             #include "UnityCG.cginc"
@@ -69,7 +69,7 @@ Shader "Unlit/Vertex"
                  wave *= 1-radius;
                  return wave;
              }
-            Interpolators vert (MeshData v)
+            Interpolators interpolation (MeshData v)
             {
                 Interpolators o; //Output
                 // float wave = cos((v.uv0.y - _Time.y * 0.2) * 6.283 *5);

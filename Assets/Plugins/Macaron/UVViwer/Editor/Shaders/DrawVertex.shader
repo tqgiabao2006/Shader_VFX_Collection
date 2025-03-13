@@ -16,7 +16,7 @@ Shader "Hidden/Macaron/UVViewer/Editor/DrawVertex"
             ZTest Always
 
             CGPROGRAM
-            #pragma vertex vert
+            #pragma vertex interpolation
             #pragma geometry geo
             #pragma fragment frag
             #pragma target 4.0
@@ -38,7 +38,7 @@ Shader "Hidden/Macaron/UVViewer/Editor/DrawVertex"
             float _VertexColorRatio;
             float _Radius;
 
-            appdata_t vert(appdata_t v)
+            appdata_t interpolation(appdata_t v)
             {
                 appdata_t o;
                 o.vertex = mul(unity_ObjectToWorld, v.vertex);
@@ -103,7 +103,7 @@ Shader "Hidden/Macaron/UVViewer/Editor/DrawVertex"
             ZTest Always
 
             CGPROGRAM
-            #pragma vertex vert
+            #pragma vertex interpolation
             #pragma fragment frag
             #pragma target 2.0
             #include "UnityCG.cginc"
@@ -125,7 +125,7 @@ Shader "Hidden/Macaron/UVViewer/Editor/DrawVertex"
             float _VertexColorRatio;
             float _Radius;
 
-            Interpolators vert(appdata_t v)
+            Interpolators interpolation(appdata_t v)
             {
                 float2 offset = normalize(mul(unity_ObjectToWorld, float4(v.normal, 0)).xy);
                 float3 worldPos = mul(unity_ObjectToWorld, v.vertex);

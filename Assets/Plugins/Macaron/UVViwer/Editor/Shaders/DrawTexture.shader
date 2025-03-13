@@ -19,7 +19,7 @@ Shader "Hidden/Macaron/UVViewer/Editor/DrawTexture"
             ZTest Always
 
             CGPROGRAM
-            #pragma vertex vert
+            #pragma vertex interpolation
             #pragma fragment frag
             #pragma target 2.0
             #include "UnityCG.cginc"
@@ -45,7 +45,7 @@ Shader "Hidden/Macaron/UVViewer/Editor/DrawTexture"
             half4 _ColorMaskA;
             half _AdditiveAlpha;
 
-            Interpolators vert(appdata_t v)
+            Interpolators interpolation(appdata_t v)
             {
                 Interpolators o;
                 o.vertex = UnityObjectToClipPos(v.vertex);

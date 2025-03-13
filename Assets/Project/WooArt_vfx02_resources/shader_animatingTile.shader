@@ -21,7 +21,7 @@ Shader "WooArt/Animating Texture by Age"
         Pass
         {
             CGPROGRAM
-            #pragma vertex vert
+            #pragma vertex interpolation
             #pragma fragment frag
 
             #include "UnityCG.cginc"
@@ -45,7 +45,7 @@ Shader "WooArt/Animating Texture by Age"
             float _Repeat;
             float _Emissive;
 
-            Interpolators vert (MeshData v)
+            Interpolators interpolation (MeshData v)
             {
                 Interpolators o;
 

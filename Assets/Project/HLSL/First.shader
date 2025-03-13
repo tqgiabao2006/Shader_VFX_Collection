@@ -27,7 +27,7 @@ Shader "Unlit/First"
             
             //Blend DstColor Zero 
             CGPROGRAM
-            #pragma vertex vert
+            #pragma vertex interpolation
             #pragma fragment frag
 
             #include "UnityCG.cginc"
@@ -59,7 +59,7 @@ Shader "Unlit/First"
             sampler2D _MainTex;
             float4 _MainTex_ST;
  
-            Interpolators vert (MeshData v)
+            Interpolators interpolation (MeshData v)
             {
                 Interpolators o; //Output
                 o.vertex = UnityObjectToClipPos(v.vertex);
