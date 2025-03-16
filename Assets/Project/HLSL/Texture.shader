@@ -27,7 +27,7 @@ Shader "Unlit/Texture"
                 float2 uv : TEXCOORD0;
             };
 
-            struct v2f
+            struct Interpolator
             {
                 float2 uv : TEXCOORD0;
                 float3 worldPos: TEXCOORD1;
@@ -42,9 +42,9 @@ Shader "Unlit/Texture"
 
             float _MipLevel;
             
-            v2f interpolation (MeshData v)
+            Interpolator interpolation (MeshData v)
             {
-                v2f o;
+                Interpolator o;
                 o.worldPos = mul(unity_ObjectToWorld, v.vertex);
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv = v.uv;
@@ -64,7 +64,7 @@ Shader "Unlit/Texture"
                  return wave;
             }
             
-            fixed4 frag (v2f i) : SV_Target
+            fixed4 frag (Interpolator i) : SV_Target
             {
                 // sample the texture
                 float2 topdown = i.worldPos.xz;
