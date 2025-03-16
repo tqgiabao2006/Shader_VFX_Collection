@@ -4,7 +4,8 @@ Shader "Unlit/Lambert"
     {
         _MainTex("Main Texture", 2D) = "white"{}
         _Glossiness("Glossiness",Range(0,1)) = 0
-        _olor("Main Color", Color) = (1,1,1,1)
+        _Color("Main Color", Color) = (1,1,1,1)
+        _Fresnel("Edge Color", Color) = (1,0,0,1)
     }
     SubShader
     {
@@ -40,6 +41,8 @@ Shader "Unlit/Lambert"
             float4 _MainTex_ST;
             float _Glossiness;
             float4 _Color;
+            float4 _Fresnel;
+            
             Interpolators vert (MeshData v)
             {
                 Interpolators o;
@@ -70,8 +73,15 @@ Shader "Unlit/Lambert"
                 //Blinn Phong
                 float3 H = normalize(L + V);
                 float3 blinn = pow( saturate(dot(H, N)) * (diffuseLight >0), _Glossiness) * _LightColor0;
+
+                //    Fresnel
+                float fresnel = (1-  dot(V, N));
+
+                float wave = (sin(20 *_Time.y)+1) * 0.5;
+                float4 edgeColor = lerp(float4(0,0,0,1), _Fresnel, wave);
                 
-                return float4(blinn + diffuseLight * _Color,1);
+               
+                return float4(blinn + diffuseLight * _Color +   fresnel *edgeColor,1);
             }
             ENDCG
         }
