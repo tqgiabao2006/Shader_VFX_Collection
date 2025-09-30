@@ -1,6 +1,4 @@
-# ✨ SHADER_VFX_COLLECTION ✨
-
-![ShaderLogo.PNG](https://github.com/tqgiabao2006/Shader_VFX_Collection/raw/main/Readme/ShaderLogo.png)
+# ✨ SHADER_VFX_COLLECTION
 
 [![Unity](https://img.shields.io/badge/Made_with-Unity-000?logo=unity&style=for-the-badge)](https://unity.com/)  
 [![GitHub Repo](https://img.shields.io/badge/View_on-GitHub-blue?style=for-the-badge&logo=github)]()
